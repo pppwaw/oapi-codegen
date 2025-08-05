@@ -626,9 +626,6 @@ func oapiSchemaToGoType(schema *openapi3.Schema, path []string, outSchema *Schem
 		}
 		outSchema.DefineViaAlias = true
 	} else if t.Is("boolean") {
-		if f != "" {
-			return fmt.Errorf("invalid format (%s) for boolean", f)
-		}
 		outSchema.GoType = "bool"
 		outSchema.DefineViaAlias = true
 	} else if t.Is("string") {
